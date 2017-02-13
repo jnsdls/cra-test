@@ -7,11 +7,33 @@ import {connect} from 'react-redux';
 import {ADD_GAME} from '../actions/games';
 import {PING} from '../actions/ping';
 
-
+import {Observable} from 'rxjs';
 
 class App extends Component {
 
   componentDidMount(){
+
+    const socket$ = Observable.webSocket('wss://echo.websocket.org');
+
+    const WebSocketTest = (test) =>
+      socket$.multiplex(
+        () => JSON.stringify({sub: test}),
+        () => JSON.stringify({unsub: test}),
+        d=> d
+      )
+        .do(e => console.log(e))
+        .retryWhen(
+          error$ => error$.switchMap(err =>
+          navigator.onLine ?
+          Observable.timer(1000) :
+          Observable.fromEvent(document, 'online')
+          )
+        );
+
+    WebSocketTest('meow')
+      .subscribe(event => console.log(event));
+
+
     const {dispatch} = this.props;
 
     setTimeout(() => {
