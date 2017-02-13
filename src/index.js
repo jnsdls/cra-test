@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/App';
 import {Provider} from 'react-redux';
 // eslint-disable-next-line
 import * as RX from 'rxjs';
 
-import './index.css';
+import './styles/index.css';
 
 import store from './store/configureStore'
 

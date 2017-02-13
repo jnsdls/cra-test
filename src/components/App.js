@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../assets/logo.svg';
+import '../styles/App.css';
 
 import {connect} from 'react-redux';
 
-import {ADD_GAME} from './actions/games';
-import {PING} from './actions/ping';
+import {ADD_GAME} from '../actions/games';
+import {PING} from '../actions/ping';
 
 
 
