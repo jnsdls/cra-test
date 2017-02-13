@@ -12,7 +12,7 @@ super small text project to figure out Redux, specifically with RxJS & redux-obs
 
 to run it yourself:
 
-1) clone this repo
-2) yarn (or npm install if you still don't use yarn)
-3) npm start (still shorter than yarnpkg start)
+1. clone this repo
+2. yarn (or npm install if you still don't use yarn)
+3. npm start (still shorter than yarnpkg start)
 
